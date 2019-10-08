@@ -20,14 +20,7 @@ teams:
     check_name: ICMPCheck
     host: tim.minions.galactic
     port: 0
-    points: 25
-    environments:
-    - matching_content: 1 packets transmitted, 1 received
-  - name: Jerry
-    check_name: ICMPCheck
-    host: jerry.minions.galactic
-    port: 0
-    points: 25
+    points: 125
     environments:
     - matching_content: 1 packets transmitted, 1 received
   - name: Kevin SSH
@@ -87,28 +80,6 @@ teams:
       properties:
       - name: commands
         value: ps
-  - name: HTTP
-    check_name: HTTPCheck
-    host: testbed_web
-    port: 80
-    points: 100
-    environments:
-    - matching_content: Thank you for using nginx
-      properties:
-      - name: useragent
-        value: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
-      - name: vhost
-        value: testbed_web
-      - name: uri
-        value: "/"
-    - matching_content: Thank you for using nginx
-      properties:
-      - name: useragent
-        value: Opera/9.80 (Windows NT 6.2; Win64; x64) Presto/2.12 Version/12.16
-      - name: vhost
-        value: testbed_web
-      - name: uri
-        value: "/"
   - name: Dave_HTTP
     check_name: HTTPCheck
     host: dave.minions.galactic
@@ -272,87 +243,9 @@ teams:
         value: A
       - name: domain
         value: dave.minions.galactic
-  - name: SMTP
-    check_name: SMTPCheck
-    host: testbed_smtp
-    port: 25
-    points: 100
-    accounts:
-    - username: ttesterson@mail.testbed.com
-      password: testpass
-    environments:
-    - matching_content: Successfully sent email
-      properties:
-      - name: touser
-        value: rpeterson@mail.testbed.com
-      - name: subject
-        value: A scoring engine test subject!
-      - name: body
-        value: This is the body of the email
-  - name: SMTPS
-    check_name: SMTPSCheck
-    host: testbed_smtp
-    port: 25
-    points: 100
-    accounts:
-    - username: ttesterson@mail.testbed.com
-      password: testpass
-    environments:
-    - matching_content: Successfully sent email
-      properties:
-      - name: touser
-        value: rpeterson@mail.testbed.com
-      - name: subject
-        value: A scoring engine test subject!
-      - name: body
-        value: This is the body of the email
-  # - name: Wordpress
-  #   check_name: WordpressCheck
-  #   host: testbed_wordpress
-  #   port: 80
-  #   points: 100
-  #   accounts:
-  #   - username: admin
-  #     password: testpassword1!
-  #   environments:
-  #   - matching_content: Welcome to WordPress!
-  #     properties:
-  #     - name: useragent
-  #       value: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Trident/5.0)
-  #     - name: vhost
-  #       value: www.example.com
-  #     - name: uri
-  #       value: "/wp-login.php"
   # Commented out because we don't have testbed containers yet
   # but these services should work, so feel free to uncomment
   # for a real competition
-  # - name: RDP
-  #   check_name: RDPCheck
-  #   host: testbed_rdp
-  #   port: 3390
-  #   points: 100
-  #   accounts:
-  #   - username: ttesterson
-  #     password: test
-  #   environments:
-  #   - matching_content: SUCCESS$
-  # - name: LDAP
-  #   check_name: LDAPCheck
-  #   host: testbed_ldap
-  #   port: 389
-  #   points: 50
-  #   accounts:
-  #   - username: ttesterson
-  #     password: testpass
-  #   - username: rpeterson
-  #     password: otherpass
-  #   environments:
-  #   - matching_content: "^result: 0 Success"
-  #     properties:
-  #     - name: domain
-  #       value: example.com
-  #     - name: base_dn
-  #       value: dc=example,dc=com
   # - name: VNC
   #   check_name: VNCCheck
   #   host: testbed_vnc
@@ -392,19 +285,6 @@ teams:
   #       value: test.com
   # - name: IMAP
   #   check_name: IMAPCheck
-  #   host: testbed_imap
-  #   port: 143
-  #   points: 100
-  #   accounts:
-  #   - username: testuser
-  #     password: testpass
-  #   environments:
-  #   - matching_content: ACCOUNT FOUND
-  #     properties:
-  #     - name: domain
-  #       value: test.com
-  # - name: IMAPS
-  #   check_name: IMAPSCheck
   #   host: testbed_imap
   #   port: 143
   #   points: 100
