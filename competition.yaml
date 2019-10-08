@@ -4,12 +4,12 @@ teams:
   color: White
   users:
   - username: whiteteamuser
-    password: testpass
+    password: chowardhen
 - name: RedTeam
   color: Red
   users:
   - username: redteamuser
-    password: testpass
+    password: BlueTeamAmIRight
 - name: Team1
   color: Blue
   users:
@@ -46,7 +46,7 @@ teams:
     check_name: SSHCheck
     host: dave.minions.galactic
     port: 22
-    points: 150
+    points: 100
     accounts:
     - username: root
       password: StealTheM00n!
@@ -65,7 +65,7 @@ teams:
     check_name: SSHCheck
     host: stuart.minions.galactic
     port: 22
-    points: 150
+    points: 100
     accounts:
     - username: root
       password: StealTheM00n!
@@ -84,7 +84,7 @@ teams:
     check_name: HTTPCheck
     host: dave.minions.galactic
     port: 80
-    points: 100
+    points: 150
     environments:
     - matching_content: Minions Galactic
       properties:
@@ -106,7 +106,7 @@ teams:
     check_name: HTTPCheck
     host: kevin.minions.galactic
     port: 80
-    points: 100
+    points: 150
     environments:
     - matching_content: Zen Cart
       properties:
@@ -128,7 +128,7 @@ teams:
     check_name: HTTPSCheck
     host: testbed_web
     port: 443
-    points: 100
+    points: 150
     environments:
     - matching_content: Roundcube
       properties:
@@ -165,7 +165,7 @@ teams:
     check_name: FTPCheck
     host: dave.minions.galactic
     port: 21
-    points: 150
+    points: 100
     accounts:
     - username: root
       password: StealTheM00n!
@@ -182,7 +182,7 @@ teams:
     check_name: FTPCheck
     host: kevin.minions.galactic
     port: 21
-    points: 150
+    points: 100
     accounts:
     - username: root
       password: StealTheM00n!
